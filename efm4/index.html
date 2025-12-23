@@ -24,8 +24,9 @@
 	<main class="container my-5">
 		<form id="search-form" class="mb-4">
 			<div class="input-group">
-				<input type="text" id="ingrediente" class="form-control"
-					placeholder="Buscar por ingrediente (ej: chicken, potato)..." required>
+				<select id="ingrediente" class="form-select" required>
+					<option value="">Cargando ingredientes...</option>
+				</select>
 				<button type="submit" class="btn btn-primary">Buscar</button>
 			</div>
 		</form>
