@@ -31,3 +31,26 @@ document.querySelector('#cargar-fetch').addEventListener('click', () => (
     .then(renderizarUsuarios)
     .catch(err => console.error('Error:', err))
 ));
+
+let GIPHY_API_KEY = localStorage.getItem('giphyApiKey') || '';
+const GIPHY_URL = 'https://api.giphy.com/v1/gifs/search';
+const GIPHY_RESULTADO = document.querySelector('#giphy-resultado');
+const GIPHY_INPUT = document.querySelector('#giphy-search');
+const GIPHY_APIKEY_INPUT = document.querySelector('#giphy-apikey');
+
+document.querySelector('#save-apikey-btn').addEventListener('click', () => {
+  GIPHY_API_KEY = GIPHY_APIKEY_INPUT.value.trim();
+  GIPHY_API_KEY ? (localStorage.setItem('giphyApiKey', GIPHY_API_KEY), alert('✅ API Key guardada correctamente')) : alert('❌ Por favor ingresa una API Key válida');
+});
+
+GIPHY_APIKEY_INPUT.value = GIPHY_API_KEY;
+
+document.querySelector('#giphy-btn').addEventListener('click', async () => {
+  const query = GIPHY_INPUT.value.trim();
+  if (!GIPHY_API_KEY) return GIPHY_RESULTADO.innerHTML = '<p class="text-warning">⚠️ Por favor configura tu API Key primero</p>';
+  if (!query) return GIPHY_RESULTADO.innerHTML = '<p class="text-danger">Por favor ingresa un término de búsqueda</p>';
+  try {
+    const { data } = await (await fetch(`${GIPHY_URL}?api_key=${GIPHY_API_KEY}&q=${query}&limit=1`)).json();
+    GIPHY_RESULTADO.innerHTML = data[0] ? `<img src="${data[0].images.original.url}" alt="${query}" class="img-fluid rounded shadow">` : '<p class="text-muted">No se encontraron GIFs</p>';
+  } catch (err) { console.error('Error:', err); GIPHY_RESULTADO.innerHTML = '<p class="text-danger">Error al buscar GIF. Verifica tu API Key.</p>'; }
+});

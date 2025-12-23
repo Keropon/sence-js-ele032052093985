@@ -24,7 +24,20 @@
 					<button id="cargar-xhr" class="btn btn-primary me-2">Cargar Usuarios (XHR)</button>
 					<button id="cargar-fetch" class="btn btn-success">Cargar Usuarios (Fetch)</button>
 				</div>
-				<output id="resultado" class="container"></output>
+				<output id="resultado" class="container mb-5"></output>
+				<hr class="my-5">
+				<h2 class="text-center mb-4">🎬 Buscador de GIFs (Giphy API)</h2>
+				<h3>🎉🎉🎉🎉 NO CAERÉ NUNCA EN LA TRAMPA DE PONER MI PROPIA API KEY EN GITHUB, GRACIAS 🎉🎉🎉🎉</h3>
+				<div class="input-group mb-3">
+					<span class="input-group-text">🔑</span>
+					<input type="password" id="giphy-apikey" class="form-control" placeholder="Ingresa tu API Key de Giphy">
+					<button id="save-apikey-btn" class="btn btn-outline-secondary">💾 Guardar Key</button>
+				</div>
+				<div class="input-group mb-4">
+					<input type="text" id="giphy-search" class="form-control" placeholder="Buscar GIF (ej: cats, funny, dance...)">
+					<button id="giphy-btn" class="btn btn-warning">🔍 Buscar GIF</button>
+				</div>
+				<output id="giphy-resultado" class="text-center d-block"></output>
 			</div>
 		</div>
 	</main>
