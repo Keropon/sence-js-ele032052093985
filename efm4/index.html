@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gourmet Go - Búsqueda de Recetas</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+	<template id="receta-template">
+		<div class="col-md-4">
+			<div class="card h-100"><img class="card-img-top imagen" alt="">
+				<div class="card-body">
+					<h5 class="card-title nombre"></h5>
+				</div>
+			</div>
+		</div>
+	</template>
+	<nav class="navbar navbar-dark bg-primary">
+		<div class="container"><span class="navbar-brand mb-0 h1">🍽️ Gourmet Go</span></div>
+	</nav>
+	<main class="container my-5">
+		<form id="search-form" class="mb-4">
+			<div class="input-group">
+				<input type="text" id="ingrediente" class="form-control"
+					placeholder="Buscar por ingrediente (ej: chicken, potato)..." required>
+				<button type="submit" class="btn btn-primary">Buscar</button>
+			</div>
+		</form>
+		<output id="resultados" class="row g-4"></output>
+	</main>
+	<script src="app.js"></script>
+</body>
+
+</html>

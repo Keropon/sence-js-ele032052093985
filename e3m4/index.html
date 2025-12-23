@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Galería Interactiva</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-light">
+	<template id="pie-template">
+		<p id="pie-de-foto"></p>
+	</template>
+	<main class="container py-4">
+		<div class="row">
+			<div class="col-12">
+				<h1 class="text-center mb-4">Mi Galería de Imágenes</h1>
+			</div>
+			<section class="col-12 galeria-container">
+				<div id="imagen-principal-container">
+					<img id="imagen-principal" src="https://placehold.co/600x400/92c952/FFF?text=Elige+una+imagen"
+						alt="Imagen principal de la galería">
+				</div>
+				<div class="thumbnails">
+					<img src="https://placehold.co/600x400/ff7f7f/FFF?text=Imagen+1" alt="Descripción de la imagen 1"
+						class="thumbnail">
+					<img src="https://placehold.co/600x400/7f7fff/FFF?text=Imagen+2" alt="Descripción de la imagen 2"
+						class="thumbnail">
+					<img src="https://placehold.co/600x400/ffff7f/000?text=Imagen+3" alt="Descripción de la imagen 3"
+						class="thumbnail">
+					<img src="https://placehold.co/600x400/ff7fff/FFF?text=Imagen+4" alt="Descripción de la imagen 4"
+						class="thumbnail">
+				</div>
+			</section>
+		</div>
+	</div>
+	<script src="app.js"></script>
+</body>
+
+</html>
